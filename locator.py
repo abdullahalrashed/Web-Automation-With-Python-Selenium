@@ -28,5 +28,10 @@ driver.maximize_window()
 # sliders = driver.find_elements(By.CLASS_NAME, "slider_img")
 # print(len(sliders))
 
+# Links = driver.find_elements(By.TAG_NAME, "a")
+# print(len(Links)) 72 links
+
+
+
 
 time.sleep(5)
