@@ -3,13 +3,13 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
-
+from selenium.webdriver.chrome.options import Options
 # --- Topic 1: Service Initialization (Automatic Driver Management) ---
 print("Initializing Chrome Service and downloading driver...")
-service = Service(ChromeDriverManager().install())
-
+chrome_options = Options()
+chrome_options.add_argument("--headless=new") 
 # --- Topic 2: Driver Initialization ---
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(options=chrome_options)
 
 # Open Facebook login page
 driver.get("https://facebook.com/")
@@ -36,3 +36,4 @@ login_button.click()
 time.sleep(5)
 
 driver.quit()
+print("Test Completed...")
