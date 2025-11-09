@@ -18,4 +18,22 @@ driver = webdriver.Chrome(service=service)
 driver.get("https://facebook.com/")
 driver.maximize_window()
 
+# tag and ID,class,attribute
+
+#tag_and_ID= driver.find_element(By.CSS_SELECTOR,"input#email").send_keys("raashare1@gmail.com")
+driver.find_element(By.CSS_SELECTOR,'input[class=''').send_keys("raashare1@gmail.com")
+#driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[1]/input").send_keys("raashare1@gmail.com")
+
+
+
+
+
+
+
+
+
+
+
+
+
 time.sleep(5)
