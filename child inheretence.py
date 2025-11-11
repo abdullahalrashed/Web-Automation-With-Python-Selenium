@@ -29,3 +29,6 @@ input_num3 = 30
 result = CalculateAverage(input_num1, input_num2, input_num3)
 
 print(f"The average of {input_num1}, {input_num2}, and {input_num3} is {result}")
+
+
+##############
