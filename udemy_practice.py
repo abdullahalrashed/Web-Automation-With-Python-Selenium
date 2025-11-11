@@ -99,6 +99,19 @@ for line in file.readlines():  # file.readlines() save the text as a list
     print(line)
 file.close()
 
+#---write---
+
+#to read with open('test.txt', 'r') as variable:
+# to write with open("test.txt",'w') as variable:
+
+with open("test.txt", 'r') as file:                         #goal: read, write, reverse, list, reverse write
+    content = file.readlines() #saved as a list
+    reversed(content)
+    with open("test.txt", 'w') as file2:
+        for line in reversed(content):
+            file2.write(line)
+
+
 
 
 
