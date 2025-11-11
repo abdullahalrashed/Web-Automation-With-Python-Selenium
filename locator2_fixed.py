@@ -9,8 +9,8 @@ print("Initializing Chrome Service and downloading driver...")
 chrome_options = Options()
 chrome_options.add_argument("--headless=new") 
 # --- Topic 2: Driver Initialization ---
-driver = webdriver.Chrome(options=chrome_options)
-
+# driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome()
 # Open Facebook login page
 driver.get("https://facebook.com/")
 driver.maximize_window()
