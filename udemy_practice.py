@@ -114,7 +114,24 @@ with open("test.txt", 'r') as file:                         #goal: read, write, 
 
 
 
+#########Exception catch finally keyword use in python#############
 
+ItemsInCart = 0
+
+# 2 items needed to add to the cart with a code [code here]
+
+if ItemsInCart !=2:
+    raise Exception("Products cart count not matching")
+
+# -----another way to do this is
+
+ItemsInCart = 0
+
+# 2 items needed to add to the cart with a code [code here]
+
+if ItemsInCart !=2:
+    pass
+assert(ItemsInCart == 2)   # when the condition inside dosent match assert break the code
 
 
 
