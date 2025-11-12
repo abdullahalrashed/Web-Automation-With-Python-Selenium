@@ -91,6 +91,31 @@ while line != "":
     line = file.readline()
 file.close()
 
+# --------------
+
+file = open('test.txt')
+
+line = file.readline()
+while line != "":
+    print(line, end='')
+    line = file.readline()
+
+file.close()
+
+# ------
+
+file = open("test.txt")
+line_number = 0
+line = file.readline()
+
+while line != "":
+    line_number = line_number + 1
+    line = file.readline()
+
+print("Total number of lines:", line_number)
+
+file.close()
+
 
 #--------
 
