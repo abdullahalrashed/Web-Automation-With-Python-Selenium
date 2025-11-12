@@ -175,3 +175,17 @@ try:
 
 except Exception as e:  # instead of customizable error it shows the python error message
     print(e)
+
+# ------Finally, it will execute whether or not test case execute or not
+
+try:
+    with open('textt.txt') as reader:  # there is no such file as textt.txt
+        reader.read()
+
+except Exception as e:  # instead of customizable error it shows the python error message
+    print(e)
+
+finally:
+    print("clean up the record")
+
+# ------------
