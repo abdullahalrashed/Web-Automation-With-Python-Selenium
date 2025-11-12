@@ -136,5 +136,3 @@ with open("test.txt", 'r') as file:                         #goal: read, write, 
 
 
 
-
-
