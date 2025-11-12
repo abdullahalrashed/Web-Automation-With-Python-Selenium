@@ -189,3 +189,34 @@ finally:
     print("clean up the record")
 
 # ------------
+
+ItemsInCart = 0
+
+
+def add_to_cart(items_to_add):
+    global ItemsInCart
+
+    if ItemsInCart < 0:
+        raise Exception("Cannot add a negative number of items")
+
+    new_total = ItemsInCart + items_to_add
+
+    if new_total > 5:
+        raise Exception("Cart limit Exceeded")
+
+
+print("Starting cart: ", ItemsInCart)
+
+try:
+    add_to_cart(2)
+    print("Cart after adding 2:", ItemsInCart)
+
+    add_to_cart(3)
+    print("Cart after adding 3: ", ItemsInCart)
+
+    add_to_cart(1)
+
+except Exception as e:
+    print("Error caught:", e)
+
+print("Final cart: ", ItemsInCart)
