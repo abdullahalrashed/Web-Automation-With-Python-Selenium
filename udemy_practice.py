@@ -166,3 +166,12 @@ try:
 
 except:
     print("i somehow ended up here because of a failure")
+
+# ------------
+
+try:
+    with open('textt.txt') as reader:  # there is no such file as textt.txt
+        reader.read()
+
+except Exception as e:  # instead of customizable error it shows the python error message
+    print(e)
