@@ -133,25 +133,11 @@ if ItemsInCart !=2:
     pass
 assert(ItemsInCart == 2)   # when the condition inside dosent match assert break the code
 
+# ---------------try and catch
 
+try:
+    with open('textt.txt') as reader:  # there is no such file as textt.txt
+        reader.read()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+except:
+    print("i somehow ended up here because of a failure")
