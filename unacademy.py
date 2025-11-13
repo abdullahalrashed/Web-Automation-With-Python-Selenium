@@ -22,7 +22,9 @@ driver.find_element(By.NAME, "name").send_keys("Abdullah Al Rashed")
 driver.find_element(By.NAME, "email").send_keys("RAAshare1@gmail.com")
 driver.find_element(By.ID, "exampleInputPassword1").send_keys("abcdefgh")
 driver.find_element(By.ID, "exampleCheck1").click()
-
-
+driver.find_element(By.CSS_SELECTOR, "input[type = 'submit'").click()
+message = driver.find_element(By.CLASS_NAME, "alert-success").text
+print(message)
+assert "Success" in message
 time.sleep(5)
 driver.close()
