@@ -35,8 +35,17 @@ driver.find_element(By.CSS_SELECTOR, "input[type = 'submit'").click()
 message = driver.find_element(By.CLASS_NAME, "alert-success").text
 print(message)
 assert "Success" in message
-time.sleep(5)
 
+### Dynamic Dropdown
+driver.get("https://www.rahulshetty.com/dropdownpractise/")
+driver.find_element(By.ID, "autosuggest ").send_keys("ind")
+countries = driver.find_elements(By.CSS_SELECTOR, "li[class =  'ui-menu-item'] a")
+print(len(countries))
+
+for country in countries:
+    if country.text == "india":
+        country.click()
+        break
 
 driver.get("https://rahulshettyacademy.com/client/#/auth/login")
 
@@ -46,9 +55,8 @@ driver.find_element(By.CSS_SELECTOR, "form div:nth-child(2) input").send_keys("@
 driver.find_element(By.CSS_SELECTOR, "form div:nth-child(3) input").send_keys("@Password1234")
 driver.find_element(By.XPATH, "//button[text()= 'Save New Password']").click()
 time.sleep(3)
-
+time.sleep(5)
 driver.quit()
-
 
 
 
