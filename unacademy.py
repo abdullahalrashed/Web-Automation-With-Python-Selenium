@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 from webdriver_manager.chrome import ChromeDriverManager  # <-- Import the manager
 
 # ... other code ...
@@ -22,11 +23,20 @@ driver.find_element(By.NAME, "name").send_keys("Abdullah Al Rashed")
 driver.find_element(By.NAME, "email").send_keys("RAAshare1@gmail.com")
 driver.find_element(By.ID, "exampleInputPassword1").send_keys("abcdefgh")
 driver.find_element(By.ID, "exampleCheck1").click()
+
+# static dropdown
+
+dropdown = Select(driver.find_element(By.CSS_SELECTOR, "select[id = 'exampleFormControlSelect1']"))
+dropdown.select_by_visible_text("Female")
+dropdown.select_by_index(0)
+# dropdown.deselect_by_value()
+
 driver.find_element(By.CSS_SELECTOR, "input[type = 'submit'").click()
 message = driver.find_element(By.CLASS_NAME, "alert-success").text
 print(message)
 assert "Success" in message
 time.sleep(5)
+
 
 driver.get("https://rahulshettyacademy.com/client/#/auth/login")
 
@@ -37,7 +47,7 @@ driver.find_element(By.CSS_SELECTOR, "form div:nth-child(3) input").send_keys("@
 driver.find_element(By.XPATH, "//button[text()= 'Save New Password']").click()
 time.sleep(3)
 
-driver.close()
+driver.quit()
 
 
 
