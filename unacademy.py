@@ -118,6 +118,5 @@ print(alert_key_text)
 assert Myname in alert_key_text
 alert_key.accept()  # to click the OK button to accept the alert pop up
 # alert_key.dismiss()  # to reject the alert , presumably the 'cancel' button
-
 time.sleep(3)
 driver.quit()
