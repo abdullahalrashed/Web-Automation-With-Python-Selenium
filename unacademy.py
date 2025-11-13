@@ -104,6 +104,20 @@ assert driver.find_element(By.ID, "displayed-text").is_displayed()
 driver.find_element(By.ID, 'hide-textbox').click()
 assert not driver.find_element(By.ID, "displayed-text").is_displayed()
 
+############### java alert popping up
+
+Myname = "Rashed"
+driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+driver.maximize_window()
+driver.find_element(By.CSS_SELECTOR, "#name").send_keys(Myname)
+driver.find_element(By.CSS_SELECTOR, "#alertbtn").click()
+
+alert_key = driver.switch_to.alert
+alert_key_text = alert_key.text
+print(alert_key_text)
+assert Myname in alert_key_text
+alert_key.accept()  # to click the OK button to accept the alert pop up
+# alert_key.dismiss()  # to reject the alert , presumably the 'cancel' button
 
 time.sleep(3)
 driver.quit()
