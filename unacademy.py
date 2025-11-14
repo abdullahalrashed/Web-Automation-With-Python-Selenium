@@ -11,6 +11,7 @@ chrome_options = Options()
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                           options=chrome_options)
+driver.implicitly_wait(8)
 
 ################ input log in password
 
@@ -130,7 +131,11 @@ assert count > 0
 #### parent to child XPATH
 for result in results:
     result.find_element(By.XPATH, "div/button").click()
-
+driver.find_element(By.CSS_SELECTOR, "img[alt = 'Cart'").click()
+driver.find_element(By.XPATH, "//button[text() = 'PROCEED TO CHECKOUT']").click()
+driver.find_element(By.CSS_SELECTOR, ".promoCode").send_keys("rahulshettyacademy")
+driver.find_element(By.CSS_SELECTOR, ".promoBtn").click()
+print(driver.find_element(By.XPATH, "//span[text() = 'Code applied ..!']").text)
 
 time.sleep(4)
 driver.quit()
