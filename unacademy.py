@@ -123,8 +123,14 @@ driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 driver.maximize_window()
 driver.find_element(By.CSS_SELECTOR, "input[class = 'search-keyword']").send_keys("ber")
 time.sleep(3)
-result = driver.find_elements(By.XPATH, "//div[@class = 'products']/div")
-count = len(result)
+results = driver.find_elements(By.XPATH, "//div[@class = 'products']/div")
+count = len(results)
+print(len(results))
 assert count > 0
+#### parent to child XPATH
+for result in results:
+    result.find_element(By.XPATH, "div/button").click()
+
+
 time.sleep(4)
 driver.quit()
