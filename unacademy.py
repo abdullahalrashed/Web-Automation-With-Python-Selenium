@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -140,5 +141,6 @@ wait = WebDriverWait(driver, 10)
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, ".promoInfo")))
 print(driver.find_element(By.XPATH, "//span[text() = 'Code applied ..!']").text)
 driver.find_element(By.XPATH, "//button[text() = 'Place Order']").click()
+
 time.sleep(4)
 driver.quit()
